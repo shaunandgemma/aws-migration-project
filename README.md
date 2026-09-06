@@ -36,24 +36,68 @@ The migration was completed using a mixture of AWS Console, AWS CLI, Linux, Powe
 
 ---
 
-# Migration Architecture
+# Architecture & Migration Diagrams
 
-## Source Environment
+## Final Migration Architecture
 
-The simulated on-premises environment was built using VirtualBox and Ubuntu Server.
+The completed migration architecture showing the simulated on-premises environment, AWS private networking, Site-to-Site VPN, EC2, RDS, DMS, MGN and the migrated NFS workload.
 
-| Server | Address | Role |
-|---|---|---|
-| `onprem-app01` | `192.168.56.10` | Flask / Gunicorn / Nginx application |
-| `onprem-db01` | `192.168.56.20` | MySQL 8 database |
-| `onprem-file01` | `192.168.56.30` | NFS file server |
-| `onprem-vpn01` | `192.168.56.254` | strongSwan VPN gateway |
+![AWS Migration Architecture](assets/diagrams/Master%20Diagram.png)
 
-On-premises network:
+---
+
+## Migration Workflows
+
+### AWS Application Migration Service (MGN)
+
+Shows the application-server rehost process from the original VirtualBox VM through continuous MGN replication, test launch and final cutover.
+
+![MGN Migration Flow](assets/diagrams/MGN%20Workflow%20Diagram.png)
+
+### AWS Database Migration Service (DMS)
+
+Shows the MySQL replatforming process using DMS Full Load and Change Data Capture before final validation against Amazon RDS.
+
+![DMS Full Load and CDC](assets/diagrams/AWS%20DMS%20Full-Load%20and%20CDC%20Migration%20Flow.png)
+
+### AWS Site-to-Site VPN
+
+Shows the hybrid connection between the VirtualBox on-premises network and the AWS VPC using strongSwan and AWS Site-to-Site VPN.
+
+![Site-to-Site VPN](assets/diagrams/AWS%20Site-to-Site%20VPN%20Setup%20Workflow.png)
+
+### Simulated On-Premises Environment
+
+The source estate was deliberately built in VirtualBox to provide a realistic environment for discovery, dependency assessment, migration and cutover.
+
+![VirtualBox On-Premises Lab](assets/diagrams/VirtualBox%20On-Premises%20Lab%20Topology%20Workflow.png)
+
+---
+
+# Validation Evidence
+
+The following screenshots provide selected evidence from the completed migration.
+
+| Validation | Evidence |
+|---|---|
+| MGN final cutover | [View screenshot](assets/screenshots/01-mgn-final-cutover.jpeg) |
+| Final migrated EC2 | [View screenshot](assets/screenshots/02-final-ec2-instance.jpeg) |
+| RDS Multi-AZ | [View screenshot](assets/screenshots/03-rds-mysql-multiaz.jpeg) |
+| DMS table statistics | [View screenshot](assets/screenshots/04-dms-table-statistics.jpeg) |
+| Site-to-Site VPN | [View screenshot](assets/screenshots/06-vpn-tunnel-status.jpeg) |
+| Application HTTP 200 | [View screenshot](assets/screenshots/07-final-application-http-200.jpeg) |
+| NFS validation | [View screenshot](assets/screenshots/08-nfs-final-validation.jpeg) |
+| RDS row validation | [View screenshot](assets/screenshots/09-rds-final-data-validation.jpeg) |
+| Terraform no drift | [View screenshot](assets/screenshots/10-terraform-no-changes.jpeg) |
+| Private subnet design | [View screenshot](assets/screenshots/12-private-subnets-multiaz.jpeg) |
+| RDS private networking | [View screenshot](assets/screenshots/20-rds-private-networking.jpeg) |
+| Terraform remote state protection | [View screenshot](assets/screenshots/33-terraform-state-protection.jpeg) |
+
+The complete evidence set is available under:
 
 ```text
-192.168.56.0/24
-````
+assets/screenshots/
+```
 
 ---
 
