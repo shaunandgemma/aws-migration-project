@@ -815,4 +815,3 @@ The final migrated application runs privately in AWS and successfully accesses b
 
 AWS migration portfolio project created to develop and demonstrate practical cloud infrastructure, migration, networking and Terraform skills.
 
-```
