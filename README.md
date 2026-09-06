@@ -1,6 +1,3 @@
-Paste this entire README into `README.md`:
-
-````markdown
 # AWS On-Premises to AWS Migration Project
 
 A hands-on portfolio project demonstrating an end-to-end migration of a simulated on-premises three-tier application into AWS.
