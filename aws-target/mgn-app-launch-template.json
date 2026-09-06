@@ -1,0 +1,13 @@
+{
+  "NetworkInterfaces": [
+    {
+      "AssociatePublicIpAddress": false,
+      "DeleteOnTermination": true,
+      "DeviceIndex": 0,
+      "SubnetId": "subnet-037134a854f734b1e",
+      "Groups": [
+        "sg-03391f581e2efa3ce"
+      ]
+    }
+  ]
+}

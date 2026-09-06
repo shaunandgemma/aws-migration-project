@@ -1,0 +1,1017 @@
+============================================================
+ MIGRATION DISCOVERY SUMMARY
+============================================================
+
+Discovery date:   2026-09-01 08:40:43 UTC
+Hostname:         onprem-db01
+Operating OS:     Ubuntu 24.04.4 LTS
+CPU:              2 vCPU(s)
+RAM:              1.9Gi
+Swap:             1.8Gi
+Root filesystem:  9.8G
+Root used:        5.1G (55%)
+
+ATTACHED DISKS
+--------------
+sda = 20G
+
+NETWORK INTERFACES
+------------------
+enp0s3 = 10.0.2.15/24
+enp0s8 = 192.168.56.20/24
+
+Default route:
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+
+REMOTE FILESYSTEM DEPENDENCIES
+------------------------------
+No NFS/CIFS/SSHFS remote mounts detected.
+
+APPLICATION / INFRASTRUCTURE SERVICES DETECTED
+----------------------------------------------
+  mysql.service               loaded active running MySQL Community Server
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+
+LISTENING TCP PORTS
+-------------------
+0.0.0.0:22
+127.0.0.1:33060
+127.0.0.53%lo:53
+127.0.0.54:53
+192.168.56.20:3306
+[::]:22
+
+============================================================
+ MIGRATION FLAGS / ITEMS TO INVESTIGATE
+============================================================
+
+[INFO] Root filesystem utilisation is 55%.
+[SECURITY] UFW is inactive.
+[SECURITY] No nftables rules detected.
+[SECURITY] iptables INPUT default policy is ACCEPT.
+[SECURITY] Services are listening on all network interfaces.
+[DATABASE] Common database listener detected.
+[DATABASE] Database service detected.
+
+IMPORTANT:
+Automated discovery finds infrastructure-level evidence.
+Application/database-specific dependencies must still be verified manually.
+Customer statements must be checked against discovered technical evidence.
+
+
+============================================================
+ HOST / OS
+============================================================
+ Static hostname: onprem-db01
+       Icon name: computer-vm
+         Chassis: vm 🖴
+      Machine ID: 95e60c2602aa4b388cb5b938d6b93091
+         Boot ID: 746fc5628e604656bbb28406c1ce96b7
+  Virtualization: oracle
+Operating System: Ubuntu 24.04.4 LTS
+          Kernel: Linux 6.8.0-138-generic
+    Architecture: x86-64
+ Hardware Vendor: innotek GmbH
+  Hardware Model: VirtualBox
+Firmware Version: VirtualBox
+   Firmware Date: Fri 2006-12-01
+    Firmware Age: 19y 9month
+
+============================================================
+ KERNEL
+============================================================
+Linux onprem-db01 6.8.0-138-generic #138-Ubuntu SMP PREEMPT_DYNAMIC Fri Jul 31 22:41:49 UTC 2026 x86_64 x86_64 x86_64 GNU/Linux
+
+============================================================
+ UPTIME
+============================================================
+ 08:40:43 up 38 min,  1 user,  load average: 0.04, 0.08, 0.13
+
+============================================================
+ LOCAL USERS
+============================================================
+shaun UID=1000 Home=/home/shaun Shell=/bin/bash
+
+============================================================
+ CPU
+============================================================
+Architecture:                            x86_64
+CPU op-mode(s):                          32-bit, 64-bit
+Address sizes:                           39 bits physical, 48 bits virtual
+Byte Order:                              Little Endian
+CPU(s):                                  2
+On-line CPU(s) list:                     0,1
+Vendor ID:                               GenuineIntel
+Model name:                              Intel(R) Core(TM) i7-10700K CPU @ 3.80GHz
+BIOS Model name:                           CPU @ 0.0GHz
+BIOS CPU family:                         0
+CPU family:                              6
+Model:                                   165
+Thread(s) per core:                      1
+Core(s) per socket:                      2
+Socket(s):                               1
+Stepping:                                5
+BogoMIPS:                                7584.02
+Flags:                                   fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx rdtscp lm constant_tsc rep_good nopl xtopology nonstop_tsc cpuid tsc_known_freq pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ibrs_enhanced fsgsbase bmi1 avx2 bmi2 invpcid rdseed adx clflushopt arat md_clear flush_l1d arch_capabilities
+Hypervisor vendor:                       KVM
+Virtualization type:                     full
+L1d cache:                               64 KiB (2 instances)
+L1i cache:                               64 KiB (2 instances)
+L2 cache:                                512 KiB (2 instances)
+L3 cache:                                32 MiB (2 instances)
+NUMA node(s):                            1
+NUMA node0 CPU(s):                       0,1
+Vulnerability Gather data sampling:      Unknown: Dependent on hypervisor status
+Vulnerability Indirect target selection: Mitigation; Aligned branch/return thunks
+Vulnerability Itlb multihit:             Not affected
+Vulnerability L1tf:                      Not affected
+Vulnerability Mds:                       Not affected
+Vulnerability Meltdown:                  Not affected
+Vulnerability Mmio stale data:           Vulnerable: Clear CPU buffers attempted, no microcode; SMT Host state unknown
+Vulnerability Reg file data sampling:    Not affected
+Vulnerability Retbleed:                  Mitigation; Enhanced IBRS
+Vulnerability Spec rstack overflow:      Not affected
+Vulnerability Spec store bypass:         Vulnerable
+Vulnerability Spectre v1:                Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:                Mitigation; Enhanced / Automatic IBRS; PBRSB-eIBRS SW sequence; BHI SW loop, KVM SW loop
+Vulnerability Srbds:                     Unknown: Dependent on hypervisor status
+Vulnerability Tsa:                       Not affected
+Vulnerability Tsx async abort:           Not affected
+Vulnerability Vmscape:                   Not affected
+
+============================================================
+ MEMORY / SWAP
+============================================================
+               total        used        free      shared  buff/cache   available
+Mem:           1.9Gi       683Mi       1.1Gi       996Ki       321Mi       1.3Gi
+Swap:          1.8Gi          0B       1.8Gi
+
+============================================================
+ DISKS
+============================================================
+NAME                       SIZE TYPE FSTYPE      FSVER    MOUNTPOINTS
+sda                         20G disk                      
+├─sda1                       1M part                      
+├─sda2                     1.8G part ext4        1.0      /boot
+└─sda3                    18.2G part LVM2_member LVM2 001 
+  └─ubuntu--vg-ubuntu--lv   10G lvm  ext4        1.0      /
+
+============================================================
+ FILESYSTEM USAGE
+============================================================
+Filesystem                        Type   Size  Used Avail Use% Mounted on
+tmpfs                             tmpfs  197M  988K  196M   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv ext4   9.8G  5.1G  4.2G  55% /
+tmpfs                             tmpfs  984M     0  984M   0% /dev/shm
+tmpfs                             tmpfs  5.0M     0  5.0M   0% /run/lock
+/dev/sda2                         ext4   1.8G  104M  1.6G   7% /boot
+tmpfs                             tmpfs  197M   12K  197M   1% /run/user/1000
+
+============================================================
+ INODE USAGE
+============================================================
+Filesystem                        Inodes IUsed IFree IUse% Mounted on
+tmpfs                               246K   732  246K    1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv   640K   98K  543K   16% /
+tmpfs                               246K     1  246K    1% /dev/shm
+tmpfs                               246K     3  246K    1% /run/lock
+/dev/sda2                           114K   317  114K    1% /boot
+tmpfs                                50K    32   50K    1% /run/user/1000
+
+============================================================
+ BLOCK DEVICE IDENTIFIERS
+============================================================
+/dev/mapper/ubuntu--vg-ubuntu--lv: UUID="ebf055fb-c7ac-4258-8b39-4bc2bed72fee" BLOCK_SIZE="4096" TYPE="ext4"
+/dev/sda2: UUID="7633591a-98af-4ad8-aab7-30c3d21cf7b3" BLOCK_SIZE="4096" TYPE="ext4" PARTUUID="4529763a-16a8-400a-9b73-b4c97081cf4d"
+/dev/sda3: UUID="OUfhvL-aeil-WU5Y-FdXw-rSLr-GrxV-00zBR2" TYPE="LVM2_member" PARTUUID="7cea8b89-4d16-4074-91f3-e2612eefd059"
+/dev/sda1: PARTUUID="0c472ff5-2aae-4815-a415-eb3f8309d2e5"
+
+============================================================
+ LVM PHYSICAL VOLUMES
+============================================================
+  PV         VG        Fmt  Attr PSize  PFree
+  /dev/sda3  ubuntu-vg lvm2 a--  18.22g 8.22g
+
+============================================================
+ LVM VOLUME GROUPS
+============================================================
+  VG        #PV #LV #SN Attr   VSize  VFree
+  ubuntu-vg   1   1   0 wz--n- 18.22g 8.22g
+
+============================================================
+ LVM LOGICAL VOLUMES
+============================================================
+  LV        VG        Attr       LSize  Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  ubuntu-lv ubuntu-vg -wi-ao---- 10.00g                                                    
+
+============================================================
+ SOFTWARE RAID
+============================================================
+Personalities : [raid0] [raid1] [raid6] [raid5] [raid4] [raid10] 
+unused devices: <none>
+
+
+============================================================
+ MULTIPATH STORAGE
+============================================================
+No output returned / command not available.
+
+============================================================
+ NETWORK INTERFACES
+============================================================
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+enp0s3           UP             10.0.2.15/24 metric 100 fd17:625c:f037:2:a00:27ff:fed0:26aa/64 fe80::a00:27ff:fed0:26aa/64 
+enp0s8           UP             192.168.56.20/24 fe80::a00:27ff:fe5a:d3e7/64 
+
+============================================================
+ IPv4 ROUTING
+============================================================
+default via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+1.0.0.1 via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+1.1.1.1 via 10.0.2.2 dev enp0s3 proto dhcp src 10.0.2.15 metric 100 
+10.0.2.0/24 dev enp0s3 proto kernel scope link src 10.0.2.15 metric 100 
+10.0.2.2 dev enp0s3 proto dhcp scope link src 10.0.2.15 metric 100 
+192.168.56.0/24 dev enp0s8 proto kernel scope link src 192.168.56.20 
+
+============================================================
+ IPv6 ROUTING
+============================================================
+fd17:625c:f037:2::/64 dev enp0s3 proto ra metric 100 expires 86214sec hoplimit 64 pref medium
+fe80::/64 dev enp0s3 proto kernel metric 256 pref medium
+fe80::/64 dev enp0s8 proto kernel metric 256 pref medium
+default via fe80::2 dev enp0s3 proto ra metric 100 expires 1614sec hoplimit 64 pref medium
+
+============================================================
+ ARP / NEIGHBOURS
+============================================================
+10.0.2.2 dev enp0s3 lladdr 52:55:0a:00:02:02 STALE 
+192.168.56.1 dev enp0s8 lladdr 0a:00:27:00:00:10 DELAY 
+192.168.56.30 dev enp0s8 lladdr 08:00:27:47:40:6b STALE 
+192.168.56.10 dev enp0s8 lladdr 08:00:27:8a:28:db STALE 
+fe80::2 dev enp0s3 lladdr 52:56:00:00:00:02 router STALE 
+
+============================================================
+ DNS CONFIGURATION
+============================================================
+--- resolv.conf ---
+# This is /run/systemd/resolve/stub-resolv.conf managed by man:systemd-resolved(8).
+# Do not edit.
+#
+# This file might be symlinked as /etc/resolv.conf. If you're looking at
+# /etc/resolv.conf and seeing this text, you have followed the symlink.
+#
+# This is a dynamic resolv.conf file for connecting local clients to the
+# internal DNS stub resolver of systemd-resolved. This file lists all
+# configured search domains.
+#
+# Run "resolvectl status" to see details about the uplink DNS servers
+# currently in use.
+#
+# Third party programs should typically not access this file directly, but only
+# through the symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a
+# different way, replace this symlink by a static file or a different symlink.
+#
+# See man:systemd-resolved.service(8) for details about the supported modes of
+# operation for /etc/resolv.conf.
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+search .
+
+--- resolvectl ---
+Global
+         Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+  resolv.conf mode: stub
+
+Link 2 (enp0s3)
+    Current Scopes: DNS
+         Protocols: +DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+Current DNS Server: 1.1.1.1
+       DNS Servers: 1.1.1.1 1.0.0.1
+
+Link 3 (enp0s8)
+    Current Scopes: none
+         Protocols: -DefaultRoute -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+
+============================================================
+ NETWORKMANAGER
+============================================================
+NetworkManager/nmcli not installed.
+
+============================================================
+ LISTENING PORTS
+============================================================
+Netid State  Recv-Q Send-Q    Local Address:Port  Peer Address:PortProcess                                               
+udp   UNCONN 0      0            127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=621,fd=16))            
+udp   UNCONN 0      0         127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=621,fd=14))            
+udp   UNCONN 0      0      10.0.2.15%enp0s3:68         0.0.0.0:*    users:(("systemd-network",pid=612,fd=22))            
+tcp   LISTEN 0      4096         127.0.0.54:53         0.0.0.0:*    users:(("systemd-resolve",pid=621,fd=17))            
+tcp   LISTEN 0      70            127.0.0.1:33060      0.0.0.0:*    users:(("mysqld",pid=868,fd=21))                     
+tcp   LISTEN 0      151       192.168.56.20:3306       0.0.0.0:*    users:(("mysqld",pid=868,fd=35))                     
+tcp   LISTEN 0      4096            0.0.0.0:22         0.0.0.0:*    users:(("sshd",pid=973,fd=3),("systemd",pid=1,fd=93))
+tcp   LISTEN 0      4096      127.0.0.53%lo:53         0.0.0.0:*    users:(("systemd-resolve",pid=621,fd=15))            
+tcp   LISTEN 0      4096               [::]:22            [::]:*    users:(("sshd",pid=973,fd=4),("systemd",pid=1,fd=94))
+
+============================================================
+ NETWORK CONNECTIONS
+============================================================
+Netid State  Recv-Q Send-Q    Local Address:Port  Peer Address:Port Process                                               
+udp   UNCONN 0      0            127.0.0.54:53         0.0.0.0:*     users:(("systemd-resolve",pid=621,fd=16))            
+udp   UNCONN 0      0         127.0.0.53%lo:53         0.0.0.0:*     users:(("systemd-resolve",pid=621,fd=14))            
+udp   UNCONN 0      0      10.0.2.15%enp0s3:68         0.0.0.0:*     users:(("systemd-network",pid=612,fd=22))            
+tcp   LISTEN 0      4096         127.0.0.54:53         0.0.0.0:*     users:(("systemd-resolve",pid=621,fd=17))            
+tcp   LISTEN 0      70            127.0.0.1:33060      0.0.0.0:*     users:(("mysqld",pid=868,fd=21))                     
+tcp   LISTEN 0      151       192.168.56.20:3306       0.0.0.0:*     users:(("mysqld",pid=868,fd=35))                     
+tcp   LISTEN 0      4096            0.0.0.0:22         0.0.0.0:*     users:(("sshd",pid=973,fd=3),("systemd",pid=1,fd=93))
+tcp   LISTEN 0      4096      127.0.0.53%lo:53         0.0.0.0:*     users:(("systemd-resolve",pid=621,fd=15))            
+tcp   ESTAB  0      36        192.168.56.20:22    192.168.56.1:59489 users:(("sshd",pid=1094,fd=4),("sshd",pid=983,fd=4)) 
+tcp   LISTEN 0      4096               [::]:22            [::]:*     users:(("sshd",pid=973,fd=4),("systemd",pid=1,fd=94))
+
+============================================================
+ MOUNTED FILESYSTEMS
+============================================================
+TARGET                         SOURCE                            FSTYPE      OPTIONS
+/                              /dev/mapper/ubuntu--vg-ubuntu--lv ext4        rw,relatime
+├─/sys                         sysfs                             sysfs       rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/security       securityfs                        securityfs  rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/cgroup             cgroup2                           cgroup2     rw,nosuid,nodev,noexec,relatime,nsdelegate,memory_recursiveprot
+│ ├─/sys/fs/pstore             pstore                            pstore      rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/bpf                bpf                               bpf         rw,nosuid,nodev,noexec,relatime,mode=700
+│ ├─/sys/kernel/debug          debugfs                           debugfs     rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/kernel/tracing        tracefs                           tracefs     rw,nosuid,nodev,noexec,relatime
+│ ├─/sys/fs/fuse/connections   fusectl                           fusectl     rw,nosuid,nodev,noexec,relatime
+│ └─/sys/kernel/config         configfs                          configfs    rw,nosuid,nodev,noexec,relatime
+├─/proc                        proc                              proc        rw,nosuid,nodev,noexec,relatime
+│ └─/proc/sys/fs/binfmt_misc   systemd-1                         autofs      rw,relatime,fd=32,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=3458
+│   └─/proc/sys/fs/binfmt_misc binfmt_misc                       binfmt_misc rw,nosuid,nodev,noexec,relatime
+├─/dev                         udev                              devtmpfs    rw,nosuid,relatime,size=965640k,nr_inodes=241410,mode=755,inode64
+│ ├─/dev/pts                   devpts                            devpts      rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000
+│ ├─/dev/shm                   tmpfs                             tmpfs       rw,nosuid,nodev,inode64
+│ ├─/dev/hugepages             hugetlbfs                         hugetlbfs   rw,nosuid,nodev,relatime,pagesize=2M
+│ └─/dev/mqueue                mqueue                            mqueue      rw,nosuid,nodev,noexec,relatime
+├─/run                         tmpfs                             tmpfs       rw,nosuid,nodev,noexec,relatime,size=201496k,mode=755,inode64
+│ ├─/run/lock                  tmpfs                             tmpfs       rw,nosuid,nodev,noexec,relatime,size=5120k,inode64
+│ └─/run/user/1000             tmpfs                             tmpfs       rw,nosuid,nodev,relatime,size=201492k,nr_inodes=50373,mode=700,uid=1000,gid=1000,inode64
+└─/boot                        /dev/sda2                         ext4        rw,relatime
+
+============================================================
+ REMOTE FILESYSTEMS
+============================================================
+No output returned / command not available.
+
+============================================================
+ PERSISTENT MOUNTS
+============================================================
+/dev/disk/by-id/dm-uuid-LVM-Y6DIi3OQazPaTx442jeUDHYIiXKhuc2WI11dpYWS4X6KKWRqxUV8ByxA0t9dkMMz / ext4 defaults 0 1
+/dev/disk/by-uuid/7633591a-98af-4ad8-aab7-30c3d21cf7b3 /boot ext4 defaults 0 1
+/swap.img	none	swap	sw	0	0
+
+============================================================
+ NFS EXPORT CONFIGURATION
+============================================================
+No output returned / command not available.
+
+============================================================
+ ACTIVE NFS EXPORTS
+============================================================
+NFS export tools not installed.
+
+============================================================
+ SAMBA STATUS
+============================================================
+Samba not detected.
+
+============================================================
+ SAMBA SHARE NAMES
+============================================================
+No Samba configuration found.
+
+============================================================
+ ISCSI
+============================================================
+
+
+============================================================
+ RUNNING SERVICES
+============================================================
+  UNIT                        LOAD   ACTIVE SUB     DESCRIPTION
+  cron.service                loaded active running Regular background program processing daemon
+  dbus.service                loaded active running D-Bus System Message Bus
+  fwupd.service               loaded active running Firmware update daemon
+  getty@tty1.service          loaded active running Getty on tty1
+  ModemManager.service        loaded active running Modem Manager
+  multipathd.service          loaded active running Device-Mapper Multipath Device Controller
+  mysql.service               loaded active running MySQL Community Server
+  polkit.service              loaded active running Authorization Manager
+  rsyslog.service             loaded active running System Logging Service
+  ssh.service                 loaded active running OpenBSD Secure Shell server
+  systemd-hostnamed.service   loaded active running Hostname Service
+  systemd-journald.service    loaded active running Journal Service
+  systemd-logind.service      loaded active running User Login Management
+  systemd-networkd.service    loaded active running Network Configuration
+  systemd-resolved.service    loaded active running Network Name Resolution
+  systemd-timesyncd.service   loaded active running Network Time Synchronization
+  systemd-udevd.service       loaded active running Rule-based Manager for Device Events and Files
+  udisks2.service             loaded active running Disk Manager
+  unattended-upgrades.service loaded active running Unattended Upgrades Shutdown
+  upower.service              loaded active running Daemon for power management
+  user@1000.service           loaded active running User Manager for UID 1000
+
+Legend: LOAD   → Reflects whether the unit definition was properly loaded.
+        ACTIVE → The high-level unit activation state, i.e. generalization of SUB.
+        SUB    → The low-level unit activation state, values depend on unit type.
+
+21 loaded units listed.
+
+============================================================
+ ENABLED SERVICES
+============================================================
+UNIT FILE                              STATE   PRESET
+apparmor.service                       enabled enabled
+apport.service                         enabled enabled
+blk-availability.service               enabled enabled
+cloud-config.service                   enabled enabled
+cloud-final.service                    enabled enabled
+cloud-init-local.service               enabled enabled
+cloud-init.service                     enabled enabled
+console-setup.service                  enabled enabled
+cron.service                           enabled enabled
+dmesg.service                          enabled enabled
+e2scrub_reap.service                   enabled enabled
+finalrd.service                        enabled enabled
+getty@.service                         enabled enabled
+gpu-manager.service                    enabled enabled
+grub-common.service                    enabled enabled
+grub-initrd-fallback.service           enabled enabled
+keyboard-setup.service                 enabled enabled
+lvm2-monitor.service                   enabled enabled
+ModemManager.service                   enabled enabled
+multipathd.service                     enabled enabled
+mysql.service                          enabled enabled
+networkd-dispatcher.service            enabled enabled
+open-iscsi.service                     enabled enabled
+open-vm-tools.service                  enabled enabled
+pollinate.service                      enabled enabled
+rsyslog.service                        enabled enabled
+secureboot-db.service                  enabled enabled
+setvtrgb.service                       enabled enabled
+snapd.apparmor.service                 enabled enabled
+snapd.autoimport.service               enabled enabled
+snapd.core-fixup.service               enabled enabled
+snapd.recovery-chooser-trigger.service enabled enabled
+snapd.seeded.service                   enabled enabled
+snapd.service                          enabled enabled
+snapd.system-shutdown.service          enabled enabled
+sysstat.service                        enabled enabled
+systemd-networkd-wait-online.service   enabled enabled
+systemd-networkd.service               enabled enabled
+systemd-pstore.service                 enabled enabled
+systemd-resolved.service               enabled enabled
+systemd-timesyncd.service              enabled enabled
+thermald.service                       enabled enabled
+ua-reboot-cmds.service                 enabled enabled
+ubuntu-advantage.service               enabled enabled
+udisks2.service                        enabled enabled
+ufw.service                            enabled enabled
+unattended-upgrades.service            enabled enabled
+vgauth.service                         enabled enabled
+
+48 unit files listed.
+
+============================================================
+ FAILED SERVICES
+============================================================
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.
+
+============================================================
+ CUSTOM SYSTEMD SERVICES
+============================================================
+No output returned / command not available.
+
+============================================================
+ SYSTEMD TIMERS
+============================================================
+NEXT                            LEFT LAST                           PASSED UNIT                           ACTIVATES
+Tue 2026-09-01 08:42:24 UTC 1min 40s Mon 2026-08-31 16:40:38 UTC         - apt-daily-upgrade.timer        apt-daily-upgrade.service
+Tue 2026-09-01 08:50:00 UTC     9min Tue 2026-09-01 08:40:06 UTC   37s ago sysstat-collect.timer          sysstat-collect.service
+Tue 2026-09-01 09:58:38 UTC 1h 17min Tue 2026-09-01 08:04:17 UTC 36min ago fwupd-refresh.timer            fwupd-refresh.service
+Tue 2026-09-01 11:04:31 UTC 2h 23min Mon 2026-08-31 16:36:38 UTC         - motd-news.timer                motd-news.service
+Tue 2026-09-01 13:17:30 UTC 4h 36min Mon 2026-08-31 18:48:38 UTC         - apt-daily.timer                apt-daily.service
+Tue 2026-09-01 13:32:34 UTC 4h 51min Fri 2026-08-28 21:03:01 UTC         - man-db.timer                   man-db.service
+Wed 2026-09-02 00:00:00 UTC      15h Tue 2026-09-01 08:02:47 UTC 37min ago dpkg-db-backup.timer           dpkg-db-backup.service
+Wed 2026-09-02 00:00:00 UTC      15h Tue 2026-09-01 08:02:47 UTC 37min ago logrotate.timer                logrotate.service
+Wed 2026-09-02 00:07:00 UTC      15h -                                   - sysstat-summary.timer          sysstat-summary.service
+Wed 2026-09-02 08:07:47 UTC      23h Tue 2026-09-01 08:07:47 UTC 32min ago update-notifier-download.timer update-notifier-download.service
+Wed 2026-09-02 08:17:47 UTC      23h Tue 2026-09-01 08:17:47 UTC 22min ago systemd-tmpfiles-clean.timer   systemd-tmpfiles-clean.service
+Sun 2026-09-06 03:10:20 UTC   4 days Mon 2026-08-31 16:16:12 UTC         - e2scrub_all.timer              e2scrub_all.service
+Mon 2026-09-07 00:43:21 UTC   5 days Mon 2026-08-31 17:26:38 UTC         - fstrim.timer                   fstrim.service
+Mon 2026-09-07 10:51:02 UTC   6 days Fri 2026-08-28 21:03:01 UTC         - update-notifier-motd.timer     update-notifier-motd.service
+-                                  - -                                   - apport-autoreport.timer        apport-autoreport.service
+-                                  - -                                   - snapd.snap-repair.timer        snapd.snap-repair.service
+-                                  - -                                   - ua-timer.timer                 ua-timer.service
+
+17 timers listed.
+
+============================================================
+ USER CRON
+============================================================
+no crontab for shaun
+
+============================================================
+ ROOT CRON
+============================================================
+no crontab for root
+
+============================================================
+ SYSTEM CRON DIRECTORIES
+============================================================
+--- /etc/cron.d ---
+total 20
+drwxr-xr-x   2 root root 4096 Feb 10  2026 .
+drwxr-xr-x 110 root root 4096 Aug 28 21:23 ..
+-rw-r--r--   1 root root  201 Apr  8  2024 e2scrub_all
+-rw-r--r--   1 root root  102 Feb 10  2026 .placeholder
+-rw-r--r--   1 root root  396 Feb 10  2026 sysstat
+
+--- cron.daily ---
+total 36
+drwxr-xr-x   2 root root 4096 Aug 28 21:06 .
+drwxr-xr-x 110 root root 4096 Aug 28 21:23 ..
+-rwxr-xr-x   1 root root  376 Jul  8  2025 apport
+-rwxr-xr-x   1 root root 1478 Mar 22  2024 apt-compat
+-rwxr-xr-x   1 root root  123 Feb  5  2024 dpkg
+-rwxr-xr-x   1 root root  377 Feb 10  2026 logrotate
+-rwxr-xr-x   1 root root 1395 Feb 10  2026 man-db
+-rw-r--r--   1 root root  102 Feb 10  2026 .placeholder
+-rwxr-xr-x   1 root root  518 Feb 10  2026 sysstat
+
+--- cron.hourly ---
+total 12
+drwxr-xr-x   2 root root 4096 Feb 10  2026 .
+drwxr-xr-x 110 root root 4096 Aug 28 21:23 ..
+-rw-r--r--   1 root root  102 Feb 10  2026 .placeholder
+
+--- cron.weekly ---
+total 16
+drwxr-xr-x   2 root root 4096 Feb 10  2026 .
+drwxr-xr-x 110 root root 4096 Aug 28 21:23 ..
+-rwxr-xr-x   1 root root 1055 Feb 10  2026 man-db
+-rw-r--r--   1 root root  102 Feb 10  2026 .placeholder
+
+--- cron.monthly ---
+total 12
+drwxr-xr-x   2 root root 4096 Feb 10  2026 .
+drwxr-xr-x 110 root root 4096 Aug 28 21:23 ..
+-rw-r--r--   1 root root  102 Feb 10  2026 .placeholder
+
+============================================================
+ UFW
+============================================================
+Status: inactive
+
+============================================================
+ NFTABLES
+============================================================
+No output returned / command not available.
+
+============================================================
+ IPTABLES
+============================================================
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+============================================================
+ IP6TABLES
+============================================================
+Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+Chain OUTPUT (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+
+============================================================
+ FIREWALLD
+============================================================
+firewalld not installed.
+
+============================================================
+ APPARMOR
+============================================================
+apparmor module is loaded.
+117 profiles are loaded.
+24 profiles are in enforce mode.
+   /usr/bin/man
+   /usr/lib/snapd/snap-confine
+   /usr/sbin/mysqld
+   lsb_release
+   man_filter
+   man_groff
+   nvidia_modprobe
+   nvidia_modprobe//kmod
+   plasmashell
+   plasmashell//QtWebEngineProcess
+   rsyslogd
+   tcpdump
+   ubuntu_pro_apt_news
+   ubuntu_pro_esm_cache
+   ubuntu_pro_esm_cache//apt_methods
+   ubuntu_pro_esm_cache//apt_methods_gpgv
+   ubuntu_pro_esm_cache//cloud_id
+   ubuntu_pro_esm_cache//dpkg
+   ubuntu_pro_esm_cache//ps
+   ubuntu_pro_esm_cache//ubuntu_distro_info
+   ubuntu_pro_esm_cache_systemctl
+   ubuntu_pro_esm_cache_systemd_detect_virt
+   unix-chkpwd
+   unprivileged_userns
+4 profiles are in complain mode.
+   transmission-cli
+   transmission-daemon
+   transmission-gtk
+   transmission-qt
+0 profiles are in prompt mode.
+0 profiles are in kill mode.
+89 profiles are in unconfined mode.
+   1password
+   Discord
+   MongoDB Compass
+   QtWebEngineProcess
+   balena-etcher
+   brave
+   buildah
+   cam
+   ch-checkns
+   ch-run
+   chrome
+   crun
+   devhelp
+   element-desktop
+   epiphany
+   evolution
+   firefox
+   flatpak
+   foliate
+   geary
+   github-desktop
+   goldendict
+   ipa_verify
+   kchmviewer
+   keybase
+   lc-compliance
+   libcamerify
+   linux-sandbox
+   loupe
+   lxc-attach
+   lxc-create
+   lxc-destroy
+   lxc-execute
+   lxc-stop
+   lxc-unshare
+   lxc-usernsexec
+   mmdebstrap
+   msedge
+   notepadqq
+   obsidian
+   opam
+   opera
+   pageedit
+   podman
+   polypane
+   privacybrowser
+   qcam
+   qmapshack
+   qutebrowser
+   rootlesskit
+   rpm
+   rssguard
+   runc
+   sbuild
+   sbuild-abort
+   sbuild-adduser
+   sbuild-apt
+   sbuild-checkpackages
+   sbuild-clean
+   sbuild-createchroot
+   sbuild-destroychroot
+   sbuild-distupgrade
+   sbuild-hold
+   sbuild-shell
+   sbuild-unhold
+   sbuild-update
+   sbuild-upgrade
+   scide
+   signal-desktop
+   slack
+   slirp4netns
+   steam
+   stress-ng
+   surfshark
+   systemd-coredump
+   thunderbird
+   toybox
+   trinity
+   tup
+   tuxedo-control-center
+   userbindmount
+   uwsgi-core
+   vdens
+   virtiofsd
+   vivaldi-bin
+   vpnns
+   vscode
+   wike
+   wpcom
+2 processes have profiles defined.
+2 processes are in enforce mode.
+   /usr/sbin/mysqld (868) 
+   /usr/sbin/rsyslogd (796) rsyslogd
+0 processes are in complain mode.
+0 processes are in prompt mode.
+0 processes are in kill mode.
+0 processes are unconfined but have a profile defined.
+0 processes are in mixed mode.
+
+============================================================
+ SELINUX
+============================================================
+SELinux tools not installed.
+
+============================================================
+ SSH SECURITY SETTINGS
+============================================================
+port 22
+listenaddress [::]:22
+listenaddress 0.0.0.0:22
+maxauthtries 6
+permitrootlogin without-password
+pubkeyauthentication yes
+passwordauthentication yes
+
+============================================================
+ NGINX VERSION
+============================================================
+Nginx not detected.
+
+============================================================
+ NGINX CONFIGURATION FILES
+============================================================
+Nginx not detected.
+
+============================================================
+ NGINX SAFE ROUTING DIRECTIVES
+============================================================
+Nginx not detected.
+
+============================================================
+ APACHE VERSION
+============================================================
+Apache not detected.
+
+============================================================
+ APACHE SITES
+============================================================
+Apache not detected.
+
+============================================================
+ APACHE MODULES
+============================================================
+Apache not detected.
+
+============================================================
+ DATABASE SOFTWARE
+============================================================
+--- mysql ---
+mysql  Ver 8.0.46-0ubuntu0.24.04.3 for Linux on x86_64 ((Ubuntu))
+
+
+============================================================
+ DATABASE SERVICES
+============================================================
+  mysql.service                                                                             loaded    active   running MySQL Community Server
+
+============================================================
+ DOCKER VERSION
+============================================================
+Docker not detected.
+
+============================================================
+ DOCKER CONTAINERS
+============================================================
+Docker not detected.
+
+============================================================
+ DOCKER IMAGES
+============================================================
+Docker not detected.
+
+============================================================
+ DOCKER NETWORKS
+============================================================
+Docker not detected.
+
+============================================================
+ DOCKER VOLUMES
+============================================================
+Docker not detected.
+
+============================================================
+ CONTAINERD
+============================================================
+containerd not detected.
+
+============================================================
+ KUBERNETES CLIENT
+============================================================
+kubectl not detected.
+
+============================================================
+ APPLICATION RUNTIMES
+============================================================
+--- python3 ---
+Python 3.12.3
+
+--- perl ---
+
+This is perl 5, version 38, subversion 2 (v5.38.2) built for x86_64-linux-gnu-thread-multi
+(with 64 registered patches, see perl -V for more detail)
+
+
+============================================================
+ RELEVANT PACKAGES
+============================================================
+libopeniscsiusr	2.1.9-3ubuntu5.4
+libpython3-stdlib	3.12.3-0ubuntu2.1
+libpython3.12-minimal	3.12.3-1ubuntu0.16
+libpython3.12-stdlib	3.12.3-1ubuntu0.16
+libpython3.12t64	3.12.3-1ubuntu0.16
+multipath-tools	0.9.4-5ubuntu8.2
+mysql-client-8.0	8.0.46-0ubuntu0.24.04.3
+mysql-client-core-8.0	8.0.46-0ubuntu0.24.04.3
+mysql-common	5.8+1.1.0build1
+mysql-server	8.0.46-0ubuntu0.24.04.3
+mysql-server-8.0	8.0.46-0ubuntu0.24.04.3
+mysql-server-core-8.0	8.0.46-0ubuntu0.24.04.3
+open-iscsi	2.1.9-3ubuntu5.4
+python-apt-common	2.7.7ubuntu5.2
+python-babel-localedata	2.10.3-3build1
+python3	3.12.3-0ubuntu2.1
+python3-apport	2.28.3-0ubuntu0.1
+python3-apt	2.7.7ubuntu5.2
+python3-attr	23.2.0-2
+python3-automat	22.10.0-2
+python3-babel	2.10.3-3build1
+python3-bcrypt	3.2.2-1build1
+python3-blinker	1.7.0-1
+python3-boto3	1.34.46+dfsg-1ubuntu1
+python3-botocore	1.34.46+repack-1ubuntu1
+python3-bpfcc	0.29.1+ds-1ubuntu7
+python3-certifi	2023.11.17-1
+python3-cffi-backend	1.16.0-2build1
+python3-chardet	5.2.0+dfsg-1
+python3-click	8.1.6-2
+python3-colorama	0.4.6-4
+python3-commandnotfound	23.04.0
+python3-configobj	5.0.8-3
+python3-constantly	23.10.4-1
+python3-cryptography	41.0.7-4ubuntu0.4
+python3-dateutil	2.8.2-3ubuntu1
+python3-dbus	1.3.2-5build3
+python3-debconf	1.5.86ubuntu1
+python3-debian	0.1.49ubuntu2
+python3-distro	1.9.0-1
+python3-distro-info	1.7build1
+python3-distupgrade	1:24.04.28
+python3-gdbm	3.12.3-0ubuntu1
+python3-gi	3.48.2-1
+python3-hamcrest	2.1.0-1
+python3-httplib2	0.20.4-3ubuntu0.1
+python3-hyperlink	21.0.0-5
+python3-idna	3.6-2ubuntu0.2
+python3-incremental	22.10.0-1
+python3-jinja2	3.1.2-1ubuntu1.3
+python3-jmespath	1.0.1-1
+python3-json-pointer	2.0-0ubuntu1
+python3-jsonpatch	1.32-3
+python3-jsonschema	4.10.3-2ubuntu1
+python3-jwt	2.7.0-1ubuntu0.1
+python3-launchpadlib	1.11.0-6
+python3-lazr.restfulclient	0.14.6-1
+python3-lazr.uri	1.0.6-3
+python3-magic	2:0.4.27-3
+python3-markdown-it	3.0.0-2
+python3-markupsafe	2.1.5-1build2
+python3-mdurl	0.1.2-1
+python3-minimal	3.12.3-0ubuntu2.1
+python3-netaddr	0.8.0-2ubuntu1
+python3-netifaces	0.11.0-2build3
+python3-netplan	1.1.2-8ubuntu1~24.04.2
+python3-newt	0.52.24-2ubuntu2
+python3-oauthlib	3.2.2-1
+python3-openssl	23.2.0-1ubuntu0.1
+python3-packaging	24.0-1
+python3-pexpect	4.9-2
+python3-pkg-resources	68.1.2-2ubuntu1.2
+python3-problem-report	2.28.3-0ubuntu0.1
+python3-ptyprocess	0.7.0-5
+python3-pyasn1	0.4.8-4ubuntu0.2
+python3-pyasn1-modules	0.2.8-1
+python3-pygments	2.17.2+dfsg-1
+python3-pyparsing	3.1.1-1
+python3-pyrsistent	0.20.0-1build2
+python3-requests	2.31.0+dfsg-1ubuntu1.1
+python3-rich	13.7.1-1
+python3-s3transfer	0.10.1-1ubuntu2
+python3-serial	3.5-2
+python3-service-identity	24.1.0-1
+python3-setuptools	68.1.2-2ubuntu1.2
+python3-six	1.16.0-4
+python3-software-properties	0.99.49.4
+python3-systemd	235-1build4
+python3-twisted	24.3.0-1ubuntu0.2
+python3-tz	2024.1-2
+python3-update-manager	1:24.04.12
+python3-urllib3	2.0.7-1ubuntu0.7
+python3-wadllib	1.3.6-5
+python3-xkit	0.5.0ubuntu6
+python3-yaml	6.0.1-2build2
+python3-zope.interface	6.1-1build1
+python3.12	3.12.3-1ubuntu0.16
+python3.12-minimal	3.12.3-1ubuntu0.16
+
+============================================================
+ POSSIBLE APPLICATION DIRECTORIES
+============================================================
+/opt
+/srv
+/usr/local
+/usr/local/bin
+/usr/local/etc
+/usr/local/games
+/usr/local/include
+/usr/local/lib
+/usr/local/lib/python3.12
+/usr/local/lib/python3.12/dist-packages
+/usr/local/sbin
+/usr/local/share
+/usr/local/share/ca-certificates
+/usr/local/share/fonts
+/usr/local/share/man
+/usr/local/share/sgml
+/usr/local/share/sgml/declaration
+/usr/local/share/sgml/dtd
+/usr/local/share/sgml/entities
+/usr/local/share/sgml/misc
+/usr/local/share/sgml/stylesheet
+/usr/local/share/xml
+/usr/local/share/xml/declaration
+/usr/local/share/xml/entities
+/usr/local/share/xml/misc
+/usr/local/share/xml/schema
+/usr/local/src
+
+============================================================
+ ENVIRONMENT FILE METADATA ONLY
+============================================================
+-rw-r--r-- 1 root root 106 Feb 10  2026 /etc/environment
+
+============================================================
+ CERTIFICATE METADATA
+============================================================
+File: /etc/ssl/certs/ca-certificates.crt
+subject=CN = ACCVRAIZ1, OU = PKIACCV, O = ACCV, C = ES
+issuer=CN = ACCVRAIZ1, OU = PKIACCV, O = ACCV, C = ES
+notBefore=May  5 09:37:37 2011 GMT
+notAfter=Dec 31 09:37:37 2030 GMT
+
+
+============================================================
+ FAILED SYSTEMD UNITS
+============================================================
+  UNIT LOAD ACTIVE SUB DESCRIPTION
+
+0 loaded units listed.
+
+============================================================
+ RECENT KERNEL/SYSTEM ERRORS
+============================================================
+-- No entries --
+
+============================================================
+ REBOOT REQUIREMENT
+============================================================
+No reboot currently required.
+
+============================================================
+ DISCOVERY COMPLETE
+============================================================

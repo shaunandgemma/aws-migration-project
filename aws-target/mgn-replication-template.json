@@ -1,0 +1,16 @@
+{
+  "stagingAreaSubnetId": "subnet-037134a854f734b1e",
+  "associateDefaultSecurityGroup": true,
+  "replicationServersSecurityGroupsIDs": [],
+  "replicationServerInstanceType": "t3.small",
+  "useDedicatedReplicationServer": false,
+  "defaultLargeStagingDiskType": "GP3",
+  "ebsEncryption": "DEFAULT",
+  "bandwidthThrottling": 0,
+  "dataPlaneRouting": "PRIVATE_IP",
+  "createPublicIP": false,
+  "stagingAreaTags": {
+    "Project": "aws-migration-project",
+    "Environment": "migration-lab"
+  }
+}

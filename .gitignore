@@ -7,3 +7,16 @@
 *.pem
 *.key
 .vagrant/
+MyNotes.txt
+
+# Local Terraform plan files
+tfplan
+
+# VirtualBox machines and runtime files
+*.vdi
+*.vbox
+*.vbox-prev
+**/Logs/
+
+# Local/raw VM files
+on-prem/vms/
